@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Cabin", sans-serif;
+}
+
+body {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    min-width: 100vw;
+}
+
+header {
+    background-color: #fff462;
+    height: 80px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    /*border-bottom: 1px solid black;*/
+}
+
+header .logo img {
+    height: 80px;
+}
+
+.active-link {
+    text-decoration: none;
+    color:white;
+    background-color: black;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 700;    
+}
+
+header .links a {
+    text-decoration: none;
+    
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 10px 20px;
+    transition: .2s;
+}
+
+header .links a:hover {
+    color:white;
+    background-color: black;
+
+}
+
+main {
+    background-color: #d1e489;
+    flex-grow: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main .thumbail {    
+    flex-grow: 1;
+
+    width: 100%;    
+    height: 450px;
+    background-image: url('../img/marmita.jpg');
+    background-size: cover; /* para cobrir toda a div */
+    background-position: center; /* para centralizar a imagem */
+    clip-path: polygon(5% 0, 80% 0%, 100% 20%, 99% 68%, 75% 100%, 0 100%, 10% 81%, 0% 20%);
+
+    /*https://bennettfeely.com/clippy/*/
+}
+
+main .conteudo {
+    /*background-color: aquamarine;  */
+    max-width: 50vw;
+    padding: 25px;
+}
+
+main div {
+    margin: 2em;
+}
+
+.conteudo h1 {
+    text-transform: uppercase;
+    font-size: 24px;
+    font-weight: 700;
+    text-shadow: 1px 0px 2px rgba(0, 0, 0, 0.397);
+}
+
+.conteudo p {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.conteudo a {
+    
+    text-decoration: none;
+    color:white;
+    background-color: black;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 700; 
+    padding: 10px 20px;   
+}
