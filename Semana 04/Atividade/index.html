@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ativ. Semana 04</title>
+    <style>
+        h2 {
+            color: brown;
+            margin-top: 3rem;
+        }
+
+        p {
+            font-weight: bold;
+            font-size: 1.3rem;
+            background-color: aquamarine;
+        }
+
+        button {
+            margin-bottom: 1.2rem;
+        }
+
+        h5 {
+            margin: 0.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <p>Respostas:</p>
+        <input id="R01" placeholder="R01">
+        <input id="R02" placeholder="R02">
+        <input id="R03" placeholder="R03">
+        <input id="letra" placeholder="Letra (A, P ou H)">
+        <button id="BtCalcular">Calcular</button>
+        <h5>Legenda:</h5>
+        <h5>Letra A - Calcula Média Aritmética</h5>
+        <h5>Letra P - Calcula Média Ponderada (Pesos: R01 = 5, R02 = 3, R03 = 2)</h5>
+        <h5>Letra H - Calcula Média Harmônica</h5>
+        <h2>Resultado:</h2>
+        <h1 id="respostas"></h1>
+
+        <script type="text/javascript">
+
+            document.getElementById("BtCalcular").addEventListener("click", () => {
+                const R01 = Number(document.getElementById("R01").value);
+                const R02 = Number(document.getElementById("R02").value);
+                const R03 = Number(document.getElementById("R03").value);
+                const letra = document.getElementById("letra").value.toUpperCase();
+
+                const calcular = (R01, R02, R03, letra) =>
+                    (letra === "A") ? (R01 + R02 + R03) / 3 :
+                        (letra === "P") ? ((R01 * 5) + (R02 * 3) + (R03 * 2)) / 10 :
+                            (letra === "H") ? 3 / ((1 / R01) + (1 / R02) + (1 / R03)) :
+                                "Letra inválida";
+
+                const resultado = calcular(R01, R02, R03, letra);
+                document.getElementById("respostas").innerHTML = resultado;
+
+            });
+        </script>
+    </div>
+</body>
+
+</html>

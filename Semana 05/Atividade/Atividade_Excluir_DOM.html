@@ -1,0 +1,77 @@
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Atividade DOM - Excluir Item</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+        }
+
+        button#btAd {
+            border-radius: 20px;
+            background-color: green;
+            color: white;
+            padding: 5px 10px;
+        }
+
+        button#btAd:hover {
+            background-color: darkgreen;
+        }
+
+        button#btEx {
+            border-radius: 20px;
+            background-color: rgb(185, 44, 44);
+            color: white;
+            padding: 5px 10px;
+        }
+
+        button#btEx:hover {
+            background-color: darkred;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button id="btAd" onclick="adicionarItem()">Adicionar Item</button>
+    <button id="btEx" onclick="excluirTodos()">Excluir Todos</button>
+
+    <div id="lista">
+    </div>
+
+    <script>
+        const lista = document.getElementById("lista");
+
+        // Função para adicionar item
+        const adicionarItem = () => {
+            const div = document.createElement("div");
+            div.style.margin = "30px";
+
+            const texto = document.createElement("span");
+            texto.innerText = "Novo Item " + (lista.children.length + 1);
+
+            const botao = document.createElement("button");
+            botao.innerText = "Excluir";
+            botao.style.marginLeft = "10px";
+
+            // Função para remover o elemento
+            botao.onclick = () => {
+                lista.removeChild(div);
+            };
+
+            div.appendChild(texto);
+            div.appendChild(botao);
+            lista.appendChild(div);
+        };
+        // Função para excluir todos os itens
+        const excluirTodos = () => {
+            lista.innerHTML = " ";
+        }
+    </script>
+
+
+</body>
+
+</html>

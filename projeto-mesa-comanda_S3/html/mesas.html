@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Front II - Mesa e Comanda</title>
+    <link rel="stylesheet" href="../css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../img/logo-mesaecomanda.png" alt="Logo do Projeto">
+        </div>
+        <div class="links">
+            <a href="mesas.html" class="active-link">Mesas</a>
+            <a href="comandas.html">Comandas</a>
+            <a href="index.html">Projeto</a>
+        </div>
+    </header>
+    <main>
+        <a href="#" class="link" id="btnCriar">Criar Mesa</a>
+        <div class="conteudo" id="principal">
+            <!-- <div class="mesa">
+                <h1>Mesa 1</h1>
+                <p>Localizada no canto iluminado do restaurante, a mesa retangular número 7 é um convite ao deleite culinário e à conversa animada. Com seu design elegante e acabamento em madeira polida, esta mesa é uma escolha popular entre os frequentadores ávidos por uma experiência gastronômica memorável.</p>
+                <a href="#">ver mesa ></a>
+            </div>  
+
+            <div class="mesa">
+                <h1>Mesa 2</h1>
+                <p>No coração do restaurante, encontra-se a mesa redonda número 12, um ponto de encontro para amigos, famílias e casais em busca de uma experiência gastronômica autêntica e acolhedora.</p>
+                <a href="#">ver mesa ></a>
+            </div>   -->
+           
+        </div>    
+        
+        
+    </main>
+
+    <script>
+
+document.getElementById('btnCriar').addEventListener("click", function(evento) {
+   // alert('clicado');
+    //console.log(evento.target)
+    criaMesa('Mesa do Clicado')
+})
+
+        function criaMesaHTML(nome) {
+            //console.log(nome)
+            //nome
+            const mesa = document.createElement('div');
+            mesa.innerHTML = `<div class="mesa">
+                    <h1>${nome}</h1>
+                    <p>No coração do restaurante, encontra-se a mesa redonda número 12, um ponto de encontro para amigos, famílias e casais em busca de uma experiência gastronômica autêntica e acolhedora.</p>
+                    <a href="#">ver mesa ></a>
+                </div>`
+
+            const principal = document.getElementById('principal')
+            principal.appendChild(mesa)
+        }
+
+        function criaMesa(nome) {
+            const mesa = document.createElement('div');
+            mesa.classList.add('mesa')
+
+            const h1 = document.createElement('h1')
+            h1.textContent = nome
+
+            const p = document.createElement('p')
+            p.textContent = "No coração do restaurante, encontra-se a mesa redonda número 12, um ponto de encontro para amigos, famílias e casais em busca de uma experiência gastronômica autêntica e acolhedora"
+
+            const a = document.createElement('a')
+            a.textContent = "ver mesa"
+            a.href = "#"
+
+            mesa.appendChild(h1)
+            mesa.appendChild(p)
+            mesa.appendChild(a)
+
+            const principal = document.getElementById('principal')
+            principal.appendChild(mesa)
+
+           //return mesa          
+        }
+
+        criaMesa('Mesa Inicial')
+
+    </script>
+
+</body>
+</html>
