@@ -1,0 +1,120 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    background: radial-gradient(circle at top, #1b2430 0%, #0d121a 100%);
+    color: #eef2ff;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+h1 {
+    margin-bottom: 24px;
+    font-size: 2rem;
+    text-align: center;
+    letter-spacing: 0.04em;
+}
+
+.controles {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+button {
+    background: linear-gradient(145deg, #3d4b66, #2a3345);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #f7faff;
+    padding: 12px 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+    font-size: 1rem;
+}
+
+button:hover {
+    transform: translateY(-1px);
+    background: linear-gradient(145deg, #556683, #39495d);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+}
+
+.person {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 10px;
+    margin: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.person-text {
+    display: flex;
+    flex-direction: column;
+}
+
+#fila-container {
+    width: min(760px, 100%);
+    min-height: 220px;
+    background-color: radial-gradient(circle at top, #1b2430 0%, #0d121a 100%);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 18px;
+    padding: 18px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    justify-content: center;
+}
+
+.person {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 14px 16px;
+    border-radius: 14px;
+    color: #eef2ff;
+    font-weight: 500;
+    max-width: 360px;
+    width: auto;
+}
+
+.person img {
+    width: 72px;
+    height: 72px;
+    object-fit: cover;
+    border-radius: 12px;
+    flex-shrink: 0;
+}
+
+.person p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.3;
+}
+
+@media (max-width: 520px) {
+    body {
+        padding: 16px;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    button {
+        width: 100%;
+    }
+}
